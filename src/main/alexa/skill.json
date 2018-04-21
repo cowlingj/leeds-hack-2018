@@ -1,0 +1,71 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "duel",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RetortIntent",
+                    "slots": [
+                        {
+                            "name": "RETORT",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{RETORT}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Retort with {RETORT}",
+                        "Comeback with {RETORT}",
+                        "Comeback {RETORT}",
+                        "Retort {RETORT}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RetortIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "RETORT",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1144952228965.715527829356"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1144952228965.715527829356",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what would you like to retort with?"
+                    }
+                ]
+            }
+        ]
+    }
+}
