@@ -1,4 +1,7 @@
+const base = 'https://hackers-of-the-caribbeans.herokuapp.com'
+
 export default {
-  start: '',
-  retort: '',
+  base: base,
+  start: base + '/fight/begin',
+  retort: base + '',
 }

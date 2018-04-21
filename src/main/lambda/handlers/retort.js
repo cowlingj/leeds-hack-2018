@@ -2,6 +2,7 @@ import Request from 'request'
 import Endpoints from '../endpoints'
 
 export default () => {
+  let self = this
   Request.post(Endpoints.retort, {
     body: this.slots.Retort.value
   }, (err, res, body) => {
