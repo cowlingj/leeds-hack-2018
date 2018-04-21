@@ -1,5 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
+
+env = process.env.NODE_ENV == undefined ? 'production' : process.env.NODE_ENV
  
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'main', 'lambda', 'index.js'),
@@ -8,7 +10,7 @@ module.exports = {
     filename: 'out.js'
   },
   target: 'node',
-  mode: 'production',
+  mode: env,
   module: {
     rules: [
       {
