@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack",
     "pre-deploy": "zip ./dist/out.zip ./dist/out.js",
-    "deploy": "npm run pre-deploy; ./scripts/deploy.sh",
+    "deploy": "npm run pre-deploy; ./scripts/update.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/cowlingj/leeds-hack-2018#readme",
   "dependencies": {
-    "alexa-sdk": "^1.0.25"
+    "alexa-sdk": "^1.0.25",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.44",
