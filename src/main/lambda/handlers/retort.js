@@ -17,9 +17,29 @@ export default function() {
       } else if (json.fight_finished) {
         this.emit("VictoryIntent");
       } else {
+        let res = "";
+        console.log(
+          body +
+            "FIGHT: " +
+            Object.keys(json) +
+            ">" +
+            typeof json.fight_steps_successful
+        );
+        if (json.fight_steps_successful !== undefined) {
+          if (
+            json.fight_steps_successful[json.fight_steps_successful.length - 1]
+          ) {
+            res = "nice one! ";
+          } else {
+            res = "you can do better than that! ";
+          }
+        }
         console.log(Object.keys(json), null, 2);
         this.response.speak(
-          'the pirate says, <prosody pitch="low">' + json.insult + "</prosody>"
+          res +
+            'the pirate says, <prosody pitch="low">' +
+            json.insult +
+            "</prosody>"
         );
         this.response.listen("make your retort");
         this.emit(":responseReady");
