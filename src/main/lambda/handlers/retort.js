@@ -19,7 +19,7 @@ export default function() {
       } else {
         console.log(Object.keys(json), null, 2);
         this.response.speak(json.insult);
-        this.response.listen();
+        this.response.listen("make your retort");
         this.emit(":responseReady");
       }
     }
