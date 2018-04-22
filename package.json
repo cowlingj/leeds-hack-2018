@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
+    "prebuild": "prettier --write \"src/**/*.js\"; eslint \"src/**/*.js\"",
     "build": "webpack",
     "predeploy": "./scripts/bundle.sh",
     "deploy": "./scripts/update.sh",
