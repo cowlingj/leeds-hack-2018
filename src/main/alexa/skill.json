@@ -1,7 +1,7 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "duel",
+            "invocationName": "battle",
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
