@@ -47,6 +47,19 @@
                     "name": "DefeatIntent",
                     "slots": [],
                     "samples": []
+                },
+                {
+                    "name": "OptionsIntent",
+                    "slots": [],
+                    "samples": [ 
+                        "what are my options",
+                        "what can i do",
+                        "what is available",
+                        "list comebacks",
+                        "available retorts",
+                        "what can i retort with",
+                        "comebacks"
+                    ]
                 }
             ],
             "types": []

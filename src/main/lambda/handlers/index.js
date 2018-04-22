@@ -4,6 +4,7 @@ import Launch from './launch'
 import Insult from './insult'
 import Victory from './victory'
 import Defeat from './defeat'
+import Options from './options'
 
 export default {
   'LaunchRequest' : Launch,
@@ -14,5 +15,6 @@ export default {
   'RetortIntent': Retort,
   'VictoryIntent': Victory,
   'DefeatIntent': Defeat,
+  'OptionsIntent': Options,
   'SessionEndedRequest': Amazon.stopIntent,
 }
