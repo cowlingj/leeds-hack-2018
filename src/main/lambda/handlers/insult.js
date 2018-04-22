@@ -10,6 +10,9 @@ export default function() {
       this.emit("DefeatIntent");
     } else if (json.fight_finished) {
       this.emit("VictoryIntent");
+    } else if (json.no_current_fight) {
+      this.response.speak("You need to meet a pirate before you battle");
+      this.emit(":responseReady");
     } else {
       this.response.speak(json.insult);
       this.response.listen("make your retort");
