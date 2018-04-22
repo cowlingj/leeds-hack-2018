@@ -11,8 +11,10 @@ export default function () {
     let json = JSON.parse(body)
     if (err) {
       this.emit('error')
-    } else if (json.dead || json.fight_finished){
-      this.emit('AMAZON.StopIntent')
+    } else if (json.dead){
+      this.emit('DefeatIntent')
+    } else if(json.fight_finished){
+      this.emit('VictoryIntent')
     } else {
       console.log(Object.keys(json), null, 2)
       this.response.speak(json.insult)
