@@ -18,7 +18,9 @@ export default function() {
         this.emit("VictoryIntent");
       } else {
         console.log(Object.keys(json), null, 2);
-        this.response.speak(json.insult);
+        this.response.speak(
+          'the pirate says, <prosody pitch="low">' + json.insult + "</prosody>"
+        );
         this.response.listen("make your retort");
         this.emit(":responseReady");
       }

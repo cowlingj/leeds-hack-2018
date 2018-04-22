@@ -14,7 +14,9 @@ export default function() {
       this.response.speak("You need to meet a pirate before you battle");
       this.emit(":responseReady");
     } else {
-      this.response.speak(json.insult);
+      this.response.speak(
+        'the pirate says, <prosody pitch="low">' + json.insult + "</prosody>"
+      );
       this.response.listen("make your retort");
       this.emit(":responseReady");
     }

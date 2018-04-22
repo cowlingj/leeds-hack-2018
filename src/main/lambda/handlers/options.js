@@ -17,7 +17,7 @@ export default function() {
             return cur;
           }
           return acc + "\n" + cur;
-        }, "")
+        }, "you can say...")
       );
       this.response.listen("make your retort");
       this.emit(":responseReady");
