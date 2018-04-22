@@ -1,19 +1,24 @@
 import Request from 'request'
 import Endpoints from '../endpoints'
 
-export default () => {
+export default function () {
+  console.log(JSON.stringify(this, null, 2))
   let self = this
   Request.post(Endpoints.retort, {
-    body: this.slots.Retort.value
+    body: self.event.request.intent.slots.RETORT.value
   }, (err, res, body) => {
+    console.log(JSON.stringify(res), null, 2)
+    let json = JSON.parse(body)
     if (err) {
-      self.emit(ERROR)
-    } else if (body.end){
-      self.emit('AMAZON.StopIntent')
+      this.emit('error')
+    } else if (json.dead || json.fight_finished){
+      this.emit('AMAZON.StopIntent')
     } else {
-      self.response.speak(body.insult)
-      self.response.cardRender("Reply", body.comebacks)
-      self.response.listen()
+      console.log(Object.keys(json), null, 2)
+      this.response.speak(json.insult)
+      //this.response.cardRender("Reply", body.comebacks)
+      this.response.listen()
+      this.emit(':responseReady')
     }
   })
 }

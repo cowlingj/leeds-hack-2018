@@ -32,6 +32,11 @@
                         "Comeback {RETORT}",
                         "Retort {RETORT}"
                     ]
+                },
+                {
+                    "name": "InsultIntent",
+                    "slots": [],
+                    "samples": []
                 }
             ],
             "types": []
